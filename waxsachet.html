@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Artisanal Handcrafted Botanical Wax Sachets. Experience premium natural soy scent tablets adorned with real dried flowers. Design your bespoke tablet in our interactive customizer.">
+    <title>Haraya Essen</title>
+
+    <!-- CSS StylingLink -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Background Canvas Particle Overlay -->
+    <canvas id="petal-canvas"></canvas>
+
+    <!-- Premium Navigation Header -->
+    <header>
+        <a href="Wax-Sachet.html" class="logo" id="header-logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            Haraya Essen
+        </a>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="main-nav">
+            <ul>
+                <li><a href="Wax-Sachet.html">Home</a></li>
+                <li><a href="Craftsmanship.html">Craftsmanship</a></li>
+                <li><a href="Collection.html">Collection</a></li>
+                <li><a href="Bespoke-Builder.html">Bespoke Builder</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+                <li><a href="Bespoke-Builder.html" class="nav-cta">Design Yours</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <!-- Decorative organic background vectors -->
+        <svg class="decor-leaf decor-1" viewBox="0 0 100 100" fill="currentColor">
+            <path d="M10,90 Q40,60 50,10 Q60,60 90,90 Z"></path>
+        </svg>
+        <svg class="decor-leaf decor-2" viewBox="0 0 100 100" fill="currentColor">
+            <path d="M10,90 Q40,60 50,10 Q60,60 90,90 Z"></path>
+        </svg>
+
+        <div class="hero-content">
+            <span class="hero-tag">Handcrafted in Small Batches</span>
+            <h1 class="hero-title">Breathe in the Art of <span>Botanical</span> Living</h1>
+            <p class="hero-desc">Elevate your closets, drawers, and sanctuaries with our hand-poured, all-natural soy
+                wax tablets. Embellished with beautiful wild botanicals and infused with organic essential oils.</p>
+
+            <div class="hero-buttons">
+                <a href="Bespoke-Builder.html" class="btn btn-primary" id="btn-hero-custom">Bespoke Builder</a>
+                <a href="Collection.html" class="btn btn-secondary" id="btn-hero-collect">Olfactive Gallery</a>
+            </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+            <div class="hero-image-frame">
+                <img src="hero_wax_sachet.png"
+                    alt="Aura and Bloom Artisanal Wax Sachets with Lavender and Dried Flowers">
+
+                <div class="hero-image-badge">
+                    <h4 class="serif-font">100% Pure Soy</h4>
+                    <p>Sustainably harvested soy wax, local botanical blossoms, and biological essential oils.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Featured Examples -->
+    <section class="collection" id="featured-products">
+        <div class="section-header fade-up-element">
+            <span class="section-subtitle">Exquisite Creations</span>
+            <h2 class="section-title">Featured Botanical Sachets</h2>
+            <p style="text-align:center; max-width:600px; margin: 1rem auto 3rem; color:var(--text-light);">A glimpse
+                into our artisanal laboratory. Discover our most beloved scent profiles.</p>
+        </div>
+
+        <div class="collection-grid fade-up-element"
+            style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); max-width:800px; margin: 0 auto;">
+            <!-- Card 1 -->
+            <div class="scent-card floral" style="margin-bottom:0;">
+                <div class="scent-card-header">
+                    <span class="scent-tag">Floral</span>
+                    <span class="scent-price">₱50.00</span>
+                </div>
+                <h3 class="scent-card-title">Lavender & Wild Thyme</h3>
+                <p class="scent-card-desc">Calming lavender buds paired with the rustic herbiness of wild thyme. Creates
+                    a peaceful sanctuary.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="scent-card woods" style="margin-bottom:0;">
+                <div class="scent-card-header">
+                    <span class="scent-tag">Woods</span>
+                    <span class="scent-price">₱50.00</span>
+                </div>
+                <h3 class="scent-card-title">Sandalwood & Clove</h3>
+                <p class="scent-card-desc">A deep, complex combination of dry Mysore sandalwood dusted with spicy clove
+                    buds and cinnamon bark.</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:3rem;" class="fade-up-element">
+            <a href="Collection.html" class="btn btn-secondary">View Full Gallery</a>
+        </div>
+    </section>
+
+    <!-- How to Customize & Order -->
+    <section class="how-to-order"
+        style="background-color: var(--bg-light); padding: 5rem 5%; position:relative; margin-top: 5rem;">
+        <div class="section-header fade-up-element">
+            <span class="section-subtitle">Your Bespoke Scent</span>
+            <h2 class="section-title">How to Order & Customize</h2>
+        </div>
+
+        <div class="steps-container fade-up-element"
+            style="display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; max-width:1000px; margin: 0 auto 4rem; text-align:center;">
+            <div class="step" style="flex:1; min-width:250px;">
+                <div
+                    style="width:60px; height:60px; background:var(--primary-color); color:var(--bg-main); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.5rem; font-weight:bold; margin: 0 auto 1rem;">
+                    1</div>
+                <h3 class="serif-font" style="margin-bottom:0.5rem; font-size:1.5rem;">Choose Base</h3>
+                <p style="color:var(--text-light);">Select your preferred wax tablet shape (oval, rectangle, or
+                    hexagon).</p>
+            </div>
+            <div class="step" style="flex:1; min-width:250px;">
+                <div
+                    style="width:60px; height:60px; background:var(--primary-color); color:var(--bg-main); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.5rem; font-weight:bold; margin: 0 auto 1rem;">
+                    2</div>
+                <h3 class="serif-font" style="margin-bottom:0.5rem; font-size:1.5rem;">Pick Botanicals</h3>
+                <p style="color:var(--text-light);">Arrange real dried flowers, leaves, and citrus slices on your
+                    tablet.</p>
+            </div>
+            <div class="step" style="flex:1; min-width:250px;">
+                <div
+                    style="width:60px; height:60px; background:var(--primary-color); color:var(--bg-main); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.5rem; font-weight:bold; margin: 0 auto 1rem;">
+                    3</div>
+                <h3 class="serif-font" style="margin-bottom:0.5rem; font-size:1.5rem;">Infuse Scent</h3>
+                <p style="color:var(--text-light);">Select a premium essential oil blend to naturally perfume your
+                    space.</p>
+            </div>
+        </div>
+
+        <div style="text-align:center;" class="fade-up-element">
+            <a href="Bespoke-Builder.html" class="btn btn-primary" style="font-size:1.2rem; padding:1.2rem 3rem;">Start
+                Designing Yours</a>
+        </div>
+    </section>
+
+
+    <!-- Artisanal Gifting Section -->
+    <section class="gifting" id="gifting">
+        <div class="section-header fade-up-element">
+            <span class="section-subtitle">Artisanal Gifting</span>
+            <h2 class="section-title">The Perfect Botanical Gift</h2>
+        </div>
+
+        <div class="gifting-grid fade-up-element">
+            <div class="gifting-card">
+                <div class="gifting-icon">🎁</div>
+                <h3 class="serif-font">Eco-Luxe Packaging</h3>
+                <p>Every wax tablet is carefully nestled in unbleached, biodegradable kraft boxes with a bed of natural
+                    wood wool.</p>
+            </div>
+
+            <div class="gifting-card">
+                <div class="gifting-icon">📜</div>
+                <h3 class="serif-font">Wax Seal Stamps</h3>
+                <p>We seal our gifts with a signature metallic bronze wax stamp, pressed with our delicate botanical
+                    leaf emblem.</p>
+            </div>
+
+            <div class="gifting-card">
+                <div class="gifting-icon">🖋️</div>
+                <h3 class="serif-font">Calligraphy Notes</h3>
+                <p>Include a personalized message. Our studio artisans will hand-write your note on premium
+                    cotton-pressed paper.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-header fade-up-element">
+            <span class="section-subtitle">Accolades</span>
+            <h2 class="section-title">The Scent Experience</h2>
+        </div>
+
+        <div class="testimonial-container fade-up-element">
+            <div class="testimonial-wrapper">
+
+                <!-- Slide 1 -->
+                <div class="testimonial-slide active">
+                    <div class="testimonial-card">
+                        <p class="testimonial-quote">"Haraya Essen has turned my wardrobe into a sensory haven. Every
+                            time I open my drawer, I am greeted by the most exquisite scent of real roses and smoky
+                            oud."</p>
+                        <div class="testimonial-stars">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                        <h4 class="testimonial-author">Clara Montgomery</h4>
+                        <span class="testimonial-author-meta">Verified Collector / London</span>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <p class="testimonial-quote">"The interactive customizer is absolute genius! I designed a
+                            hexagon lavender and citrus sachet for my wedding favors. The guests were completely wowed
+                            by the craftsmanship."</p>
+                        <div class="testimonial-stars">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                        <h4 class="testimonial-author">Julian Mercer</h4>
+                        <span class="testimonial-author-meta">Art Director / Paris</span>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <p class="testimonial-quote">"They last much longer than traditional drawer liners, and they
+                            look like mini pieces of botanical art hanging in my closet. Outstanding design and
+                            attention to detail."</p>
+                        <div class="testimonial-stars">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                        <h4 class="testimonial-author">Isabella Vance</h4>
+                        <span class="testimonial-author-meta">Interior Designer / Milan</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Controls -->
+            <div class="testimonial-controls">
+                <button class="btn-ctrl" id="testimonial-prev" aria-label="Previous Review">&larr;</button>
+                <button class="btn-ctrl" id="testimonial-next" aria-label="Next Review">&rarr;</button>
+            </div>
+        </div>
+    </section>
+    <!-- Contact the Studio -->
+    <section class="contact-studio" id="contact">
+        <div class="section-header fade-up-element">
+            <span class="section-subtitle">Reach Out</span>
+            <h2 class="section-title">Contact the Studio</h2>
+        </div>
+        <div class="contact-container fade-up-element"
+            style="display:flex; justify-content:center; gap:4rem; padding: 2rem 5%; max-width:1200px; margin:0 auto; flex-wrap:wrap;">
+            <div class="contact-info" style="flex:1; min-width:300px;">
+                <h3 class="serif-font" style="font-size:2rem; margin-bottom:1rem; color:var(--text-dark);">Let's Connect
+                </h3>
+                <p style="margin-bottom:2rem; color:var(--text-light); line-height:1.6;">Whether you're looking for a
+                    bespoke wedding favor or a customized corporate gift, our artisans are ready to help you curate the
+                    perfect scent.</p>
+                <div style="margin-bottom:1rem;">
+                    <strong style="color:var(--primary-color);">Email:</strong><br>
+                    <a href="mailto:j.juanir123@gmail.com"
+                        style="color:inherit; text-decoration:none;">j.juanir123@gmail.com</a>
+                </div>
+                <div style="margin-bottom:1rem;">
+                    <strong style="color:var(--primary-color);">Phone:</strong><br>
+                    <span>+63 998 907 9429</span>
+                </div>
+                <div>
+                    <strong style="color:var(--primary-color);">Laboratory:</strong><br>
+                    <span>Manila, Philippines<br>Visits by appointment only.</span>
+                </div>
+            </div>
+            <div class="contact-form-wrapper"
+                style="flex:1; min-width:300px; background:var(--bg-light); padding:2rem; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.05);">
+                <form class="contact-form" style="display:flex; flex-direction:column; gap:1rem;">
+                    <input type="text" placeholder="Your Name" required
+                        style="padding:1rem; border:1px solid #ddd; border-radius:8px; font-family:inherit;">
+                    <input type="email" placeholder="Your Email" required
+                        style="padding:1rem; border:1px solid #ddd; border-radius:8px; font-family:inherit;">
+                    <textarea placeholder="Your Message" rows="4" required
+                        style="padding:1rem; border:1px solid #ddd; border-radius:8px; font-family:inherit; resize:none;"></textarea>
+                    <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Newsletter Signup Section -->
+    <section class="newsletter">
+        <div class="newsletter-content fade-up-element">
+            <h2 class="newsletter-title serif-font">Join the Scent Circle</h2>
+            <p class="newsletter-desc">Subscribe to receive seasonal collection previews, bespoke batch alerts, and care
+                guidelines directly from our botanical laboratory.</p>
+
+            <form class="newsletter-form" id="news-form">
+                <input type="email" placeholder="Your Email Address" required aria-label="Email address input">
+                <button type="submit" class="btn btn-subscribe">Subscribe</button>
+            </form>
+
+            <div class="subscribe-success" id="news-success">Gratitude. Scent updates sent.</div>
+        </div>
+    </section>
+
+    <!-- Footers -->
+    <footer>
+        <div class="footer-grid">
+
+            <div class="footer-info">
+                <a href="Wax-Sachet.html" class="logo footer-logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    Haraya Essen
+                </a>
+                <p>Designing modern sensory environments using natural wax sculpting and locally sourced wild
+                    botanicals. Handcrafted in our laboratory with solar cured methodologies.</p>
+
+                <div class="footer-socials">
+                    <a href="#" class="social-link" aria-label="Instagram">IG</a>
+                    <a href="#" class="social-link" aria-label="Pinterest">PN</a>
+                    <a href="#" class="social-link" aria-label="Facebook">FB</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Studio</h4>
+                <ul>
+                    <li><a href="Wax-Sachet.html">Home</a></li>
+                    <li><a href="Craftsmanship.html">Our Craft</a></li>
+                    <li><a href="Collection.html">Olfactive Gallery</a></li>
+                    <li><a href="Bespoke-Builder.html">Bespoke Builder</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Collection</h4>
+                <ul>
+                    <li><a href="Collection.html">Lavender & Thyme</a></li>
+                    <li><a href="Collection.html">Wild Rose & Oud</a></li>
+                    <li><a href="Collection.html">Orange Blossom & Sage</a></li>
+                    <li><a href="Collection.html">Sandalwood & Clove</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Customer Care</h4>
+                <ul>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="#">Shipping Details</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Contact Laboratory</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Haraya Essen. All olfactory copyrights reserved.</p>
+
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core JavaScript Link -->
+    <script src="app.js"></script>
+</body>
+
+</html>

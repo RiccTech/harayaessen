@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Artisanal Handcrafted Botanical Wax Sachets. Experience premium natural soy scent tablets adorned with real dried flowers. Design your bespoke tablet in our interactive customizer.">
+    <title>Hiraya Essen</title>
+
+    <!-- CSS StylingLink -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Background Canvas Particle Overlay -->
+    <canvas id="petal-canvas"></canvas>
+
+    <!-- Premium Navigation Header -->
+    <header>
+        <a href="Wax-Sachet.html" class="logo" id="header-logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            Hiraya Essen
+        </a>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="main-nav">
+            <ul>
+                <li><a href="Wax-Sachet.html">Home</a></li>
+                <li><a href="Craftsmanship.html">Craftsmanship</a></li>
+                <li><a href="Collection.html">Collection</a></li>
+                <li><a href="Bespoke-Builder.html">Bespoke Builder</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+                <li><a href="Bespoke-Builder.html" class="nav-cta">Design Yours</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Olfactive Gallery/Collection Section -->
+    <section class="collection" id="collection">
+        <div class="section-header fade-up-element">
+            <span class="section-subtitle">Olfactive Gallery</span>
+            <h2 class="section-title">The Classic Aromas</h2>
+        </div>
+
+        <ul class="collection-tabs fade-up-element">
+            <li><button class="tab-btn active" data-filter="all">All Blends</button></li>
+            <li><button class="tab-btn" data-filter="floral">Floral</button></li>
+            <li><button class="tab-btn" data-filter="woods">Woods</button></li>
+            <li><button class="tab-btn" data-filter="fresh">Fresh</button></li>
+        </ul>
+
+        <div class="collection-grid fade-up-element">
+
+            <!-- Card 1 -->
+            <div class="scent-card floral">
+                <div class="scent-card-header">
+                    <span class="scent-tag">Floral</span>
+                    <span class="scent-price">₱50.00</span>
+                </div>
+                <h3 class="scent-card-title">Lavender & Wild Thyme</h3>
+                <p class="scent-card-desc">Calming lavender buds paired with the rustic herbiness of wild thyme. Creates
+                    a peaceful sanctuary.</p>
+
+                <div class="olfactive-pyramid">
+                    <div class="pyramid-row">
+                        <span class="pyramid-label">Top</span>
+                        <span class="pyramid-notes">Bergamot, Eucalyptus</span>
+                    </div>
+                    <div class="pyramid-row">
+                        <span class="pyramid-label">Heart</span>
+                        <span class="pyramid-notes">English Lavender, Thyme</span>
+                    </div>
+                    <div class="pyramid-row">
+                        <span class="pyramid-label">Base</span>
+                        <span class="pyramid-notes">White Musk, Cedarwood</span>
+                    </div>
+                </div>
+
+                <!-- Advanced Reveal Overlay -->
+                <div class="scent-card-overlay">
+                    <h4 class="overlay-title">Lavender & Thyme</h4>
+                    <p class="overlay-intro">A tranquil therapeutic blend, perfect for linen drawers, helping induce
+                        restful sleep cycles.</p>
+                    <div class="overlay-details">
+                        <div class="detail-row">
+                            <span class="detail-title">Ideal Setting</span>
+                            <span class="detail-text">Bedrooms, Pillow Closets</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-title">Olfactive Vibe</span>
+                            <span class="detail-text">Relaxing, Herbaceous, Calming</span>
+                        </div>
+                    </div>
+                    <button class="btn-card-add">Add to Collection</button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="scent-card floral">
+                <div class="scent-card-header">
+                    <span class="scent-tag">Floral</span>
+                    <span class="scent-price">₱50.00</span>
+                </div>
+                <h3 class="scent-card-title">Wild Rose & Smoked Oud</h3>
+                <p class="scent-card-desc">Velvety damask rose resting on a warm, luxurious base of smoked agarwood and
+                    sweet amber.</p>
+
+                <div class="olfactive-pyramid">
+                    <div class="pyramid-row">
+                        <span class="pyramid-label">Top</span>
+                        <span class="pyramid-notes">Pink Pepper, Plum</span>
+                    </div>
+                    <div class="pyramid-row">
+                        <span class="pyramid-label">Heart</span>
+                        <span class="pyramid-notes">Damask Rose, Oud Wood</span>
+                    </div>
+                    <div class="pyramid-row">
+                        <span class="pyramid-label">Base</span>
+                        <span class="pyramid-notes">Vanilla Husk, Labdanum</span>
+                    </div>
+                </div>
+
+                <div class="scent-card-overlay">
+                    <h4 class="overlay-title">Rose & Smoked Oud</h4>
+                    <p class="overlay-intro">A mysterious, sultry blend combining romantic florals with heavy eastern
+                        resins.</p>
+                    <div class="overlay-details">
+                        <div class="detail-row">
+                            <span class="detail-title">Ideal Setting</span>
+                            <span class="detail-text">Walk-in Wardrobes, Entryways</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-title">Olfactive Vibe</span>
+                            <span class="detail-text">Exotic, Opulent, Warm</span>
+                        </div>
+                    </div>
+                    <button class="btn-card-add">Add to Collection</button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="scent-card woods">
+                <div class="scent-card-header">
+                    <span class="scent-tag">Woods</span>
+                    <span class="scent-price">₱50.00</span>
+                </div>
+                <h3 class="scent-card-title">Sandalwood & Clove</h3>
+                <p class="scent-card-desc">A deep, complex combination of dry Mysore sandalwood dusted with spicy clove
+                    buds and cinnamon bark.</p>
+
+                <div class="olfactive-pyramid">
+                    <div class="pyramid-row">
+                        <span class="pyramid-label">Top</span>
+                        <span class="pyramid-notes">Cardamom, Nutmeg</span>
+                    </div>
+                    <div class="pyramid-row">
+                        <span class="pyramid-label">Heart</span>
+                        <span class="pyramid-notes">Cinnamon, Clove Bud</span>
+                    </div>
+                    <div class="pyramid-row">
+                        <span class="pyramid-label">Base</span>
+                        <span class="pyramid-notes">Sandalwood, Patchouli</span>
+                    </div>
+                </div>
+
+                <div class="scent-card-overlay">
+                    <h4 class="overlay-title">Sandalwood & Clove</h4>
+                    <p class="overlay-intro">A highly grounding, cozy woody profile that provides long-lasting comfort.
+                    </p>
+                    <div class="overlay-details">
+                        <div class="detail-row">
+                            <span class="detail-title">Ideal Setting</span>
+                            <span class="detail-text">Libraries, Heavy Winter Closets</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-title">Olfactive Vibe</span>
+                            <span class="detail-text">Grounding, Rich, Cozy</span>
+                        </div>
+                    </div>
+                    <button class="btn-card-add">Add to Collection</button>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="scent-card fresh">
+                <div class="scent-card-header">
+                    <span class="scent-tag">Fresh</span>
+                    <span class="scent-price">₱50.00</span>
+                </div>
+                <h3 class="scent-card-title">Orange Blossom & Sage</h3>
+                <p class="scent-card-desc">Luminous, sun-drenched neroli layered with fresh-cut garden sage and light
+                    sea mineral accords.</p>
+
+                <div class="olfactive-pyramid">
+                    <div class="pyramid-row">
+                        <span class="pyramid-label">Top</span>
+                        <span class="pyramid-notes">Orange Rind, Sea Salt</span>
+                    </div>
+                    <div class="pyramid-row">
+                        <span class="pyramid-label">Heart</span>
+                        <span class="pyramid-notes">Neroli, Garden Sage</span>
+                    </div>
+                    <div class="pyramid-row">
+                        <span class="pyramid-label">Base</span>
+                        <span class="pyramid-notes">Oakmoss, Clean Vetiver</span>
+                    </div>
+                </div>
+
+                <div class="scent-card-overlay">
+                    <h4 class="overlay-title">Orange Blossom & Sage</h4>
+                    <p class="overlay-intro">Crisp and uplifting, bringing the refreshing wind of a Mediterranean
+                        shoreline into your space.</p>
+                    <div class="overlay-details">
+                        <div class="detail-row">
+                            <span class="detail-title">Ideal Setting</span>
+                            <span class="detail-text">Bathrooms, Linen Cabinets</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-title">Olfactive Vibe</span>
+                            <span class="detail-text">Crisp, Energizing, Sunlight</span>
+                        </div>
+                    </div>
+                    <button class="btn-card-add">Add to Collection</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footers -->
+    <footer>
+        <div class="footer-grid">
+
+            <div class="footer-info">
+                <a href="Wax-Sachet.html" class="logo footer-logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    Haraya Essen
+                </a>
+                <p>Designing modern sensory environments using natural wax sculpting and locally sourced wild
+                    botanicals. Handcrafted in our laboratory with solar cured methodologies.</p>
+
+                <div class="footer-socials">
+                    <a href="#" class="social-link" aria-label="Instagram">IG</a>
+                    <a href="#" class="social-link" aria-label="Pinterest">PN</a>
+                    <a href="#" class="social-link" aria-label="Facebook">FB</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Studio</h4>
+                <ul>
+                    <li><a href="Wax-Sachet.html">Home</a></li>
+                    <li><a href="Craftsmanship.html">Our Craft</a></li>
+                    <li><a href="Collection.html">Olfactive Gallery</a></li>
+                    <li><a href="Bespoke-Builder.html">Bespoke Builder</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Collection</h4>
+                <ul>
+                    <li><a href="Collection.html">Lavender & Thyme</a></li>
+                    <li><a href="Collection.html">Wild Rose & Oud</a></li>
+                    <li><a href="Collection.html">Orange Blossom & Sage</a></li>
+                    <li><a href="Collection.html">Sandalwood & Clove</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Customer Care</h4>
+                <ul>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="#">Shipping Details</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Contact Laboratory</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Haraya Essen. All olfactory copyrights reserved.</p>
+
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core JavaScript Link -->
+    <script src="app.js"></script>
+</body>
+
+</html>

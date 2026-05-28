@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Artisanal Handcrafted Botanical Wax Sachets. Experience premium natural soy scent tablets adorned with real dried flowers. Design your bespoke tablet in our interactive customizer.">
+    <title>Hiraya Essen</title>
+
+    <!-- CSS StylingLink -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Background Canvas Particle Overlay -->
+    <canvas id="petal-canvas"></canvas>
+
+    <!-- Premium Navigation Header -->
+    <header>
+        <a href="Wax-Sachet.html" class="logo" id="header-logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            Hiraya Essen
+        </a>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="main-nav">
+            <ul>
+                <li><a href="Wax-Sachet.html">Home</a></li>
+                <li><a href="Craftsmanship.html">Craftsmanship</a></li>
+                <li><a href="Collection.html">Collection</a></li>
+                <li><a href="Bespoke-Builder.html">Bespoke Builder</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+                <li><a href="Bespoke-Builder.html" class="nav-cta">Design Yours</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Interactive Customizer Section -->
+    <section class="customizer" id="customizer">
+        <div class="section-header fade-up-element">
+            <span class="section-subtitle">Artisanal Studio</span>
+            <h2 class="section-title">Design Your Bespoke Tablet</h2>
+        </div>
+
+        <div class="customizer-layout fade-up-element">
+
+            <!-- Left Sticky Preview Panel -->
+            <div class="customizer-preview-sticky" id="customizer-preview">
+                <h3 class="serif-font" style="font-size: 1.6rem; color: var(--color-moss-dark);">Visual Preview</h3>
+
+                <div class="customizer-canvas-container">
+                    <!-- Premium Vector SVG representing the customisable wax sachet -->
+                    <svg id="sachet-svg" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+
+                        <defs>
+                            <!-- Texture filters for extreme depth and physical feel -->
+                            <filter id="wax-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                                <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#364136"
+                                    flood-opacity="0.12" />
+                            </filter>
+                            <filter id="organic-wax" x="0%" y="0%" width="100%" height="100%">
+                                <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" result="noise" />
+                                <feDiffuseLighting in="noise" lighting-color="#ffffff" surfaceScale="2" result="light">
+                                    <feDistantLight azimuth="45" elevation="60" />
+                                </feDiffuseLighting>
+                                <feBlend mode="multiply" in="SourceGraphic" in2="light" />
+                            </filter>
+                        </defs>
+
+                        <!-- Ribbon string path -->
+                        <path id="svg-ribbon" d="M100,-20 C110,-20 108,40 100,45 C92,40 90,-20 100,-20" fill="#4A5D4E"
+                            stroke="rgba(0,0,0,0.05)" stroke-width="1" />
+
+                        <!-- Main Sachet Body Shape (starts Hexagon) -->
+                        <path id="svg-wax-body" d="M100,20 L180,60 L180,140 L100,180 L20,140 L20,60 Z" fill="#FAF8F5"
+                            filter="url(#wax-shadow)" stroke="rgba(0, 0, 0, 0.04)" stroke-width="1" />
+
+                        <!-- Hanging Ribbon Hole -->
+                        <circle cx="100" cy="45" r="8" fill="#FAF7F2" stroke="rgba(0,0,0,0.08)" stroke-width="1" />
+
+                        <!-- BOTANICAL VECTOR LAYERS -->
+                        <!-- 1. Rosebuds -->
+                        <g class="svg-botanical" data-botanical-type="rosebud">
+                            <!-- Coral Rosebud Left -->
+                            <path d="M50,110 C50,100 65,95 65,110 C65,120 50,125 50,110" fill="#C58B7E" />
+                            <path d="M50,110 C45,105 52,95 57,105" fill="#B17568" />
+                            <path d="M48,112 Q45,120 40,122" stroke="#5D6D5F" stroke-width="2" fill="none" />
+                            <!-- Coral Rosebud Right -->
+                            <path d="M140,80 C140,70 155,65 155,80 C155,90 140,95 140,80" fill="#C58B7E" />
+                            <path d="M138,82 Q132,90 128,95" stroke="#5D6D5F" stroke-width="2" fill="none" />
+                        </g>
+
+                        <!-- 2. Lavender Sprigs -->
+                        <g class="svg-botanical" data-botanical-type="lavender">
+                            <!-- Center stem -->
+                            <path d="M100,165 Q105,120 110,80" stroke="#778D7D" stroke-width="2" fill="none" />
+                            <!-- Lavender beads -->
+                            <circle cx="108" cy="85" r="4" fill="#998FB0" />
+                            <circle cx="112" cy="92" r="4" fill="#887CA3" />
+                            <circle cx="104" cy="98" r="4.5" fill="#998FB0" />
+                            <circle cx="110" cy="108" r="4" fill="#887CA3" />
+                            <circle cx="103" cy="115" r="4.5" fill="#998FB0" />
+                            <circle cx="108" cy="125" r="4" fill="#887CA3" />
+
+                            <!-- Left stem -->
+                            <path d="M80,160 Q85,130 75,100" stroke="#778D7D" stroke-width="1.8" fill="none" />
+                            <circle cx="73" cy="105" r="3.5" fill="#998FB0" />
+                            <circle cx="77" cy="112" r="3.5" fill="#887CA3" />
+                            <circle cx="72" cy="120" r="4" fill="#998FB0" />
+                            <circle cx="75" cy="130" r="3.5" fill="#887CA3" />
+                        </g>
+
+                        <!-- 3. Dehydrated Oranges -->
+                        <g class="svg-botanical" data-botanical-type="orange">
+                            <!-- Large orange wedge on bottom-left -->
+                            <path d="M45,150 A50,50 0 0,0 110,160 L75,120 Z" fill="#E6A15C" opacity="0.9" />
+                            <path d="M49,147 A44,44 0 0,0 104,155 L75,120 Z" fill="#F9C38B" />
+                            <!-- Inner orange pulp details -->
+                            <path d="M57,143 L73,123 L63,141 Z" fill="#E6A15C" />
+                            <path d="M70,144 L75,124 L77,145 Z" fill="#E6A15C" />
+                            <path d="M85,142 L77,123 L93,138 Z" fill="#E6A15C" />
+                            <circle cx="75" cy="120" r="3" fill="#FDF3E7" />
+                        </g>
+
+                        <!-- 4. Jasmine Blossoms -->
+                        <g class="svg-botanical" data-botanical-type="jasmine">
+                            <!-- Jasmine Flower 1 -->
+                            <path d="M135,130 Q130,120 120,130 Q130,140 135,130 Z" fill="#FFFFFF"
+                                stroke="rgba(0,0,0,0.05)" />
+                            <path d="M135,130 Q145,120 150,130 Q140,140 135,130 Z" fill="#FFFFFF"
+                                stroke="rgba(0,0,0,0.05)" />
+                            <path d="M135,130 Q125,140 130,150 Q140,140 135,130 Z" fill="#FFFFFF"
+                                stroke="rgba(0,0,0,0.05)" />
+                            <path d="M135,130 Q145,140 140,150 Q130,140 135,130 Z" fill="#FFFFFF"
+                                stroke="rgba(0,0,0,0.05)" />
+                            <circle cx="135" cy="130" r="3.5" fill="#ECD599" />
+
+                            <!-- Jasmine Flower 2 -->
+                            <path d="M150,105 Q145,98 138,105 Q145,112 150,105 Z" fill="#FFFFFF"
+                                stroke="rgba(0,0,0,0.05)" />
+                            <path d="M150,105 Q158,98 162,105 Q155,112 150,105 Z" fill="#FFFFFF"
+                                stroke="rgba(0,0,0,0.05)" />
+                            <path d="M150,105 Q142,112 146,120 Q152,112 150,105 Z" fill="#FFFFFF"
+                                stroke="rgba(0,0,0,0.05)" />
+                            <circle cx="150" cy="105" r="2.5" fill="#ECD599" />
+                        </g>
+
+                        <!-- 5. Cinnamon Rolls -->
+                        <g class="svg-botanical" data-botanical-type="cinnamon">
+                            <!-- Diagonal Cinnamon stick top right -->
+                            <rect x="70" y="55" width="75" height="14" rx="4" transform="rotate(32 70 55)"
+                                fill="#784E3D" stroke="#5C3B2E" stroke-width="1" />
+                            <line x1="85" y1="70" x2="140" y2="105" stroke="#462C22" stroke-width="1.5"
+                                stroke-dasharray="3,3" />
+                            <!-- Stick 2 -->
+                            <rect x="60" y="65" width="60" height="12" rx="3" transform="rotate(35 60 65)"
+                                fill="#684233" stroke="#4E3126" stroke-width="1" />
+                        </g>
+
+                    </svg>
+                </div>
+
+                <div class="customizer-price-display">
+                    <span class="custom-price-label">Estimated Scent Cost</span>
+                    <span class="custom-price-val" id="custom-price">₱50.00</span>
+                </div>
+            </div>
+
+            <!-- Right Step-by-Step Selection Form -->
+            <div class="customizer-panel" id="customizer-panel">
+
+                <!-- Step Indicators -->
+                <div class="step-indicator">
+                    <div class="step-dot active"></div>
+                    <div class="step-dot"></div>
+                    <div class="step-dot"></div>
+                    <div class="step-dot"></div>
+                </div>
+
+                <!-- STEP 1: SHAPE -->
+                <div class="customizer-step-content active" data-step="0">
+                    <span class="section-subtitle">Step 01</span>
+                    <h3 class="step-title">Select Your Canvas</h3>
+                    <p class="step-subtitle">Choose the geometric framework for your scented wax tablet.</p>
+
+                    <div class="option-grid">
+                        <div class="option-card selected" data-type="shape" data-value="hexagon">
+                            <span class="option-name">Geometric Hexagon</span>
+                            <span class="option-desc">Contemporary six-sided sculpture. A timeless minimalist
+                                favorite.</span>
+                            <span
+                                style="font-size: 0.8rem; font-weight:700; color:var(--color-clay); margin-top:0.5rem;">₱50.00</span>
+                        </div>
+
+                        <div class="option-card" data-type="shape" data-value="oval">
+                            <span class="option-name">Artisanal Oval</span>
+                            <span class="option-desc">Soft, fluid curves representing natural organic harmony.</span>
+                            <span
+                                style="font-size: 0.8rem; font-weight:700; color:var(--color-clay); margin-top:0.5rem;">₱50.00</span>
+                        </div>
+
+                        <div class="option-card" data-type="shape" data-value="arch">
+                            <span class="option-name">Gothic Arch</span>
+                            <span class="option-desc">An elegant structural portal. Maximizes botanical surface
+                                area.</span>
+                            <span
+                                style="font-size: 0.8rem; font-weight:700; color:var(--color-clay); margin-top:0.5rem;">₱50.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2: SCENT -->
+                <div class="customizer-step-content" data-step="1">
+                    <span class="section-subtitle">Step 02</span>
+                    <h3 class="step-title">Olfactive Foundation</h3>
+                    <p class="step-subtitle">Select the core therapeutic essential oil profile infused inside the wax.
+                    </p>
+
+                    <div class="option-grid">
+                        <div class="option-card selected" data-type="scent" data-value="lavender">
+                            <span class="option-name">Lavender & Thyme</span>
+                            <span class="option-desc">Calming, restful botanical atmosphere. Off-white wax hue.</span>
+                            <span
+                                style="font-size: 0.8rem; font-weight:700; color:var(--color-clay); margin-top:0.5rem;">Included</span>
+                        </div>
+
+                        <div class="option-card" data-type="scent" data-value="rose">
+                            <span class="option-name">Wild Rose & Oud</span>
+                            <span class="option-desc">Opulent damask rose blended with exotic wood resin. Pink wax
+                                tint.</span>
+                            <span
+                                style="font-size: 0.8rem; font-weight:700; color:var(--color-clay); margin-top:0.5rem;">+₱0.50</span>
+                        </div>
+
+                        <div class="option-card" data-type="scent" data-value="citrus">
+                            <span class="option-name">Citrus & Sage</span>
+                            <span class="option-desc">Bright, uplifting neroli blossoms and garden sage. Warm honey wax
+                                tint.</span>
+                            <span
+                                style="font-size: 0.8rem; font-weight:700; color:var(--color-clay); margin-top:0.5rem;">+₱0.50</span>
+                        </div>
+
+                        <div class="option-card" data-type="scent" data-value="cedarwood">
+                            <span class="option-name">Cedarwood & Clove</span>
+                            <span class="option-desc">Smoky, earthy cedar layered with sweet ground cloves. Rich
+                                grey-cream wax.</span>
+                            <span
+                                style="font-size: 0.8rem; font-weight:700; color:var(--color-clay); margin-top:0.5rem;">+₱1.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 3: RIBBON -->
+                <div class="customizer-step-content" data-step="2">
+                    <span class="section-subtitle">Step 03</span>
+                    <h3 class="step-title">Hanging Ribbons</h3>
+                    <p class="step-subtitle">Pick the luxurious velvet or organic cord ribbon to hang your sachet.</p>
+
+                    <div class="option-grid">
+                        <div class="option-card selected" data-type="ribbon" data-value="olive">
+                            <div class="option-card-color">
+                                <span class="color-dot" style="background-color: #4A5D4E;"></span>
+                                <span class="option-name">Velvet Sage/Olive</span>
+                            </div>
+                            <span class="option-desc">Lush, organic green representing forest moss.</span>
+                            <span
+                                style="font-size: 0.8rem; font-weight:700; color:var(--color-clay); margin-top:0.5rem;">Included</span>
+                        </div>
+
+                        <div class="option-card" data-type="ribbon" data-value="cream">
+                            <div class="option-card-color">
+                                <span class="color-dot" style="background-color: #E9E3D5;"></span>
+                                <span class="option-name">Silk Ivory Cream</span>
+                            </div>
+                            <span class="option-desc">Classic, premium silk satin for clean minimalist
+                                aesthetics.</span>
+                            <span
+                                style="font-size: 0.8rem; font-weight:700; color:var(--color-clay); margin-top:0.5rem;">Included</span>
+                        </div>
+
+                        <div class="option-card" data-type="ribbon" data-value="terracotta">
+                            <div class="option-card-color">
+                                <span class="color-dot" style="background-color: #C58B7E;"></span>
+                                <span class="option-name">Dusty Terracotta</span>
+                            </div>
+                            <span class="option-desc">Cozy organic earthy pink, hand-dyed with plant pigments.</span>
+                            <span
+                                style="font-size: 0.8rem; font-weight:700; color:var(--color-clay); margin-top:0.5rem;">+₱0.50</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 4: BOTANICALS -->
+                <div class="customizer-step-content" data-step="3">
+                    <span class="section-subtitle">Step 04</span>
+                    <h3 class="step-title">Botanical Embellishments</h3>
+                    <p class="step-subtitle">Select up to 3 gorgeous, local dried elements to set in the wax surface.
+                    </p>
+
+                    <div class="option-grid">
+                        <div class="option-card selected multi" data-type="botanical" data-value="rosebud">
+                            <span class="option-name">Dried Rosebuds</span>
+                            <span class="option-desc">Deep crimson rosebuds representing natural luxury.</span>
+                            <span
+                                style="font-size: 0.8rem; font-weight:700; color:var(--color-clay); margin-top:0.4rem;">+₱1.50</span>
+                        </div>
+
+                        <div class="option-card selected multi" data-type="botanical" data-value="lavender">
+                            <span class="option-name">Lavender Sprigs</span>
+                            <span class="option-desc">Violet flower stems, hand-selected from regional fields.</span>
+                            <span
+                                style="font-size: 0.8rem; font-weight:700; color:var(--color-clay); margin-top:0.4rem;">+₱1.00</span>
+                        </div>
+
+                        <div class="option-card multi" data-type="botanical" data-value="orange">
+                            <span class="option-name">Dehydrated Orange</span>
+                            <span class="option-desc">Sun-dried translucent citrus wheels. Glorious golden glow.</span>
+                            <span
+                                style="font-size: 0.8rem; font-weight:700; color:var(--color-clay); margin-top:0.4rem;">+₱1.50</span>
+                        </div>
+
+                        <div class="option-card multi" data-type="botanical" data-value="jasmine">
+                            <span class="option-name">Jasmine Blossoms</span>
+                            <span class="option-desc">Fragile porcelain jasmine flowers for clean floral detail.</span>
+                            <span
+                                style="font-size: 0.8rem; font-weight:700; color:var(--color-clay); margin-top:0.4rem;">+₱1.20</span>
+                        </div>
+
+                        <div class="option-card multi" data-type="botanical" data-value="cinnamon">
+                            <span class="option-name">Cinnamon Bark Rolls</span>
+                            <span class="option-desc">Aromatic brown quill pieces. Adds a rustic organic frame.</span>
+                            <span
+                                style="font-size: 0.8rem; font-weight:700; color:var(--color-clay); margin-top:0.4rem;">+₱1.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="customizer-nav">
+                    <button class="btn btn-nav btn-nav-prev" id="btn-prev">Previous Step</button>
+                    <button class="btn btn-nav btn-nav-next" id="btn-next">Next Step</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footers -->
+    <footer>
+        <div class="footer-grid">
+
+            <div class="footer-info">
+                <a href="Wax-Sachet.html" class="logo footer-logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    Haraya Essen
+                </a>
+                <p>Designing modern sensory environments using natural wax sculpting and locally sourced wild
+                    botanicals. Handcrafted in our laboratory with solar cured methodologies.</p>
+
+                <div class="footer-socials">
+                    <a href="#" class="social-link" aria-label="Instagram">IG</a>
+                    <a href="#" class="social-link" aria-label="Pinterest">PN</a>
+                    <a href="#" class="social-link" aria-label="Facebook">FB</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Studio</h4>
+                <ul>
+                    <li><a href="Wax-Sachet.html">Home</a></li>
+                    <li><a href="Craftsmanship.html">Our Craft</a></li>
+                    <li><a href="Collection.html">Olfactive Gallery</a></li>
+                    <li><a href="Bespoke-Builder.html">Bespoke Builder</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Collection</h4>
+                <ul>
+                    <li><a href="Collection.html">Lavender & Thyme</a></li>
+                    <li><a href="Collection.html">Wild Rose & Oud</a></li>
+                    <li><a href="Collection.html">Orange Blossom & Sage</a></li>
+                    <li><a href="Collection.html">Sandalwood & Clove</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Customer Care</h4>
+                <ul>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="#">Shipping Details</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Contact Laboratory</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Haraya Essen. All olfactory copyrights reserved.</p>
+
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core JavaScript Link -->
+    <script src="app.js"></script>
+</body>
+
+</html>
