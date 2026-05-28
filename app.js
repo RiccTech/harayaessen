@@ -3,6 +3,25 @@
  * Core Logic: Dynamic Canvas Botanicals, Customizer, Carousel, Accordion, and Revealer
  */
 
+// --- FIREBASE CONFIGURATION & INITIALIZATION ---
+// TODO: Replace this object with your actual Firebase config from the Firebase Console
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY_HERE",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID_HERE"
+};
+
+let db = null;
+if (typeof firebase !== 'undefined') {
+  firebase.initializeApp(firebaseConfig);
+  db = firebase.firestore();
+} else {
+  console.warn("Firebase SDK not loaded. Operating in Demo Mode.");
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // --- 1. DECORATIVE FLOATING BOTANICALS CANVAS ENGINE ---
   const canvas = document.getElementById('petal-canvas');
@@ -342,7 +361,31 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         } else if (currentStep === steps.length - 1) {
           // Trigger successful animation transition!
-          showSuccessScreen();
+          if (db && firebaseConfig.projectId !== "YOUR_PROJECT_ID") {
+            // Calculate final price number or string
+            const priceText = document.getElementById('custom-price') ? document.getElementById('custom-price').textContent : 'Unknown';
+            
+            const orderData = {
+              shape: customSachet.shape,
+              scent: customSachet.scent,
+              ribbon: customSachet.ribbon,
+              botanicals: customSachet.botanicals,
+              price: priceText,
+              timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            };
+            
+            db.collection("bespoke_orders").add(orderData)
+              .then(() => {
+                showSuccessScreen();
+              })
+              .catch((error) => {
+                console.error("Error saving order: ", error);
+                alert("There was an error processing your custom order. Please try again.");
+              });
+          } else {
+            // Fallback if Firebase isn't configured
+            showSuccessScreen();
+          }
         }
       });
       
@@ -522,9 +565,24 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const email = newsForm.querySelector('input').value;
       if (email.trim() !== '') {
-        newsForm.style.display = 'none';
-        newsSuccess.textContent = `Gratitude. Scent updates sent to: ${email}`;
-        newsSuccess.style.display = 'block';
+        if (db && firebaseConfig.projectId !== "YOUR_PROJECT_ID") {
+          db.collection("newsletter_subscribers").add({
+            email: email,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+          }).then(() => {
+            newsForm.style.display = 'none';
+            newsSuccess.textContent = `Gratitude. Scent updates sent to: ${email}`;
+            newsSuccess.style.display = 'block';
+          }).catch((error) => {
+            console.error("Error saving subscriber: ", error);
+            alert("Error subscribing to newsletter. Please try again.");
+          });
+        } else {
+          // Fallback if Firebase isn't configured
+          newsForm.style.display = 'none';
+          newsSuccess.textContent = `[Demo Mode] Gratitude. Scent updates sent to: ${email}`;
+          newsSuccess.style.display = 'block';
+        }
       }
     });
   }
@@ -551,5 +609,37 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     // Fallback if observer is unsupported
     revealElements.forEach(el => el.classList.add('visible'));
+  }
+
+  // --- 9. CONTACT STUDIO FORM INTEGRATION ---
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const inputs = contactForm.querySelectorAll('input, textarea');
+      const name = inputs[0] ? inputs[0].value : '';
+      const email = inputs[1] ? inputs[1].value : '';
+      const message = inputs[2] ? inputs[2].value : '';
+      
+      if (name.trim() && email.trim() && message.trim()) {
+        if (db && firebaseConfig.projectId !== "YOUR_PROJECT_ID") {
+          db.collection("contact_messages").add({
+            name: name,
+            email: email,
+            message: message,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+          }).then(() => {
+            alert("Thank you! Your message has been sent to our studio.");
+            contactForm.reset();
+          }).catch((error) => {
+            console.error("Error saving message: ", error);
+            alert("There was an error sending your message. Please try again.");
+          });
+        } else {
+          alert("[Demo Mode] Thank you! Your message would have been sent.");
+          contactForm.reset();
+        }
+      }
+    });
   }
 });
